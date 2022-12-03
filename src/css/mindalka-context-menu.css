@@ -1,0 +1,73 @@
+mindalka-context-menu{
+	position: absolute;
+	font-size: 1.5em;
+	cursor: not-allowed;
+	background-color: green;
+	background-color: var(--theme-context-menu-bg-color);
+	overflow: auto;
+	z-index: 100000;
+}
+
+.mindalka-context-menu-item{
+	background-color: green;
+	cursor: pointer;
+	background-color: var(--theme-context-menu-item-bg-color);
+}
+
+.mindalka-context-menu-item.disabled{
+	pointer-events: none;
+}
+
+.mindalka-context-menu-item.selected{
+	background-color: blue;
+	background-color: var(--theme-context-menu-item-selected-bg-color);
+}
+
+
+.mindalka-context-menu-item.separator{
+	height: 5px;
+	background-color: black;
+}
+.mindalka-context-menu-item>.mindalka-context-menu-item-title:hover{
+	background-color: var(--theme-context-menu-item-hover-bg-color);
+}
+
+.mindalka-context-menu-item.selected>.mindalka-context-menu-item-title::after{
+	content: "✔";
+	right: 0px;
+	position: absolute;
+}
+.mindalka-context-menu-item>.mindalka-context-menu-item-title::after{
+	transition: all 0.2s ease 0s;
+	width: 32px;
+	height: 32px;
+}
+.mindalka-context-menu-item.closed>.mindalka-context-menu-item-title, .mindalka-context-menu-item.opened>.mindalka-context-menu-item-title{
+	padding-right: 32px;
+}
+.mindalka-context-menu-item.closed>.mindalka-context-menu-item-title::after{
+	content: "➤";
+	right: 0px;
+	position: absolute;
+}
+.mindalka-context-menu-item.opened>.mindalka-context-menu-item-title::after{
+	content: "➤";
+	right: 0px;
+	position: absolute;
+	/*writing-mode: vertical-rl; */
+	transform: rotate(90deg);
+}
+
+.mindalka-context-menu-item .submenu{
+	background-color: var(--theme-context-menu-submenu-bg-color);
+	padding-left: 10px;
+	margin-left: 2px;
+	display: none;
+	overflow: hidden;
+	position: relative;
+	background-color: var(--theme-context-menu-submenu-fg-color);
+}
+
+.mindalka-context-menu-item.opened>.submenu{
+	display: block;
+}

@@ -1,0 +1,73 @@
+mindalka-panel{
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+
+	flex: 0 0 auto;
+	/*flex-grow: 0;
+	flex-shrink: 0;
+	flex-basis: auto;*/
+	/*flex-basis: 0;*/
+	/*flex: 1;*/
+	/*height:100%;
+	width:100%;*/
+
+	/*padding: 5px !important;*/
+	box-sizing: border-box;
+	pointer-events: all;
+	overflow: hidden;
+	position: relative;
+	flex-direction: column;
+	box-sizing: border-box;
+}
+mindalka-panel > *{
+	/*flex: 1;*/
+	/*flex-grow: 0;
+	flex-shrink: 0;
+	flex-basis: auto;*/
+	/*flex: 1;*/
+	/*display: flex;
+	flex: 1;
+	height:100%;
+	width:100%;*/
+}
+.mindalka-panel-row{
+	flex-direction: row;
+}
+.mindalka-panel-row > mindalka-panel{
+	height:100%;
+}
+.mindalka-panel-column{
+	flex-direction: column;
+}
+.mindalka-panel-column > mindalka-panel{
+	width:100%;
+}
+.mindalka-panel-splitter{
+	display: none;
+	flex: 0 0 10px;
+	background-color: red;
+}
+mindalka-panel>.title{
+	cursor: pointer;
+	text-align: center;
+	font-size: 1.5em;
+	padding: 4px;
+	overflow: hidden;
+}
+mindalka-panel>.content{
+	width: 100%;
+	box-sizing: border-box;
+}
+
+mindalka-panel[collapsible='1'] > .title{
+
+}
+mindalka-panel[collapsible='1'] > .title::after{
+	content: "-";
+	right: 5px;
+	position: absolute;
+}
+mindalka-panel[collapsed='1'] > .title::after{
+	content: "+";
+}

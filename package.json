@@ -1,0 +1,13 @@
+{
+	"name": "mindalka-ui",
+	"version": "1.0.0",
+	"description": "",
+	"main": "dist/mindalka-ui.js",
+	"type": "module",
+	"devDependencies": {
+		"cssnano": "^5.1.13",
+		"postcss": "^8.4.16",
+		"rollup": "^2.60.1",
+		"rollup-watch": "^3.2.2"
+	}
+}

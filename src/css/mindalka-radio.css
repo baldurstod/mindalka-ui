@@ -1,0 +1,45 @@
+:root{
+	--mindalka-radio-button-border-radius: 0.5rem;
+	--mindalka-radio-button-padding: 0.5rem;
+	--mindalka-radio-button-font-size: 1rem;
+}
+mindalka-radio{
+	display: inline-flex;
+	overflow: hidden;
+	user-select: none;
+}
+.mindalka-radio-label{
+	margin: auto 0;
+	font-weight: bold;
+	margin-right: 0.25rem;
+}
+mindalka-radio > button{
+	padding: var(--mindalka-radio-button-padding);
+	color: var(--mindalka-ui-text-primary);
+	cursor: pointer;
+	appearance: none;
+	border-style: solid;
+	border-width: 0.0625rem;
+	border-color: var(--mindalka-ui-border-primary);
+	border-right-style: none;
+	background-color: var(--mindalka-ui-input-background-primary);
+	transition: background-color 0.2s linear;
+	font-size: var(--mindalka-radio-button-font-size);
+	overflow: hidden;
+}
+mindalka-radio > button:hover{
+	background-color: var(--mindalka-ui-input-background-secondary);
+}
+mindalka-radio > button[selected]{
+	background-color: var(--mindalka-ui-accent-primary);
+}
+mindalka-radio > button[selected]:hover{
+	background-color: var(--mindalka-ui-accent-secondary);
+}
+mindalka-radio > button:first-of-type{
+	border-radius: var(--mindalka-radio-button-border-radius) 0 0 var(--mindalka-radio-button-border-radius);
+}
+mindalka-radio > button:last-child{
+	border-right-style: solid;
+	border-radius: 0 var(--mindalka-radio-button-border-radius) var(--mindalka-radio-button-border-radius) 0;
+}
