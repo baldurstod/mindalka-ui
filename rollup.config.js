@@ -9,13 +9,13 @@ async function writeElement(elementName, elementClass) {
 	let css = await postcss([cssnano()]).process(input);
 
 	let fileContent = `import {${elementClass}, styleInject} from '../dist/mindalka-ui.js';
-import {InjectUiStyle} from '../define/.inject-ui-style.js';
+import {InjectUiStyle} from '../dist/define/.inject-ui-style.js';
 if (window.customElements) {
 	styleInject(\`${css}\`);
 	customElements.define('${elementName}', ${elementClass});
 }`;
 
-	fs.writeFile(`./define/${elementName}.js`, Buffer.from(fileContent), async (err) => {if (err) throw err});
+	fs.writeFile(`./dist/define/${elementName}.js`, Buffer.from(fileContent), async (err) => {if (err) throw err});
 }
 
 async function writeGlobal() {
@@ -28,10 +28,10 @@ export const InjectUiStyle = (function () {
 	styleInject(\`${css}\`);
 }());`;
 
-	fs.writeFile(`./define/.inject-ui-style.js`, Buffer.from(fileContent), async (err) => {if (err) throw err});
+	fs.writeFile(`./dist/define/.inject-ui-style.js`, Buffer.from(fileContent), async (err) => {if (err) throw err});
 }
 
-fs.mkdir('./define/', undefined, err => err && console.log(err));
+fs.mkdirSync('./dist/define/', {recursive: true});
 
 for (let elementName in elements) {
 	let elementClass = elements[elementName];
