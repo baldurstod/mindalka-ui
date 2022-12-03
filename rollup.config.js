@@ -8,8 +8,8 @@ async function writeElement(elementName, elementClass) {
 	let input = fs.readFileSync(cssPath);
 	let css = await postcss([cssnano()]).process(input);
 
-	let fileContent = `import {${elementClass}, styleInject} from '../dist/mindalka-ui.js';
-import {InjectUiStyle} from '../dist/define/.inject-ui-style.js';
+	let fileContent = `import {${elementClass}, styleInject} from '../mindalka-ui.js';
+import {InjectUiStyle} from './.inject-ui-style.js';
 if (window.customElements) {
 	styleInject(\`${css}\`);
 	customElements.define('${elementName}', ${elementClass});
@@ -23,7 +23,7 @@ async function writeGlobal() {
 	let input = fs.readFileSync(cssPath);
 	let css = await postcss([cssnano()]).process(input);
 
-	let fileContent = `import {styleInject} from '../dist/mindalka-ui.js';
+	let fileContent = `import {styleInject} from '../mindalka-ui.js';
 export const InjectUiStyle = (function () {
 	styleInject(\`${css}\`);
 }());`;
