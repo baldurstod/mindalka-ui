@@ -118,6 +118,7 @@ export class MindalkaSlideshow extends HTMLElement {
 	disconnectedCallback() {
 		if (this.#htmlZoomContainer) {
 			this.#htmlZoomContainer.remove();
+			hide(this.#htmlZoomContainer);
 		}
 	}
 
