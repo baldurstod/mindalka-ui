@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Test accordion</title>
-		<script type="module" src="../build/mindalka-ui-all.js"></script>
+		<script type="module" src="../dist/define/mindalka-accordion.js"></script>
 	</head>
 	<body>
 		<mindalka-accordion multiple="0" id="accordion">
@@ -17,7 +17,7 @@
 			</item>
 		</mindalka-accordion>
 		<script type="module">
-			import {createElement} from '../build/mindalka-ui-all.js';
+			import {createElement} from '../dist/mindalka-ui.js';
 			let accordion = document.getElementById('accordion');
 
 			let h = createElement('header', {innerHTML:'Item 3'});
