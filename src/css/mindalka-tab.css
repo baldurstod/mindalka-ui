@@ -20,7 +20,7 @@ mindalka-tab::first-letter{
 	cursor: pointer;
 	user-select: none;
 	pointer-events: all;
-	flex: 0 1 150px;
+	flex: 0 0;
 	text-align: center;
 	white-space: nowrap;
 }
