@@ -20,6 +20,7 @@
 		</mindalka-radio>
 	</body>
 	<script type="module">
+		import {createElement} from '../dist/mindalka-ui.js';
 		function resolveAfterDelay(delay) {
 			return new Promise(resolve => setTimeout(() => resolve(), delay));
 		}
@@ -27,5 +28,22 @@
 		document.getElementById('radio-multiple').addEventListener('change', (event) => console.log(event.detail))
 		await resolveAfterDelay(2000);
 		document.getElementById('radio-multiple').select('4', true);
+
+
+		createElement('mindalka-radio', {
+			parent: document.body,
+			childs: [
+				createElement('button', {i18n:'#button_1', value:'button_1', attributes:{selected:1}}),
+				createElement('button', {i18n:'#button_2', value:'button_2'}),
+				createElement('button', {i18n:'#button_3', value:'button_3'}),
+			],
+			events: {
+				change: (event) => {
+					if (event.detail.state) {
+						console.log(event.detail.value);
+					}
+				}
+			}
+		});
 	</script>
 </html>
