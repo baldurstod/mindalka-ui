@@ -7,9 +7,10 @@ mindalka-tab-group{
 	overflow: hidden;
 }
 .mindalka-tab-group-header{
-	flex: 0 0;
 	background-color: var(--main-bg-color-bright);
 	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
 }
 .mindalka-tab-group-content{
 	flex: 1;
