@@ -10,6 +10,11 @@ function createElementNS(namespaceURI, tagName, options) {
 	return element;
 }
 
+function updateElement(element, options) {
+	createElementOptions(element, options);
+	return element;
+}
+
 function createElementOptions(element, options) {
 	if (options) {
 		for (let optionName in options) {
@@ -1677,4 +1682,4 @@ class MindalkaToggleButton extends HTMLElement {
 	}
 }
 
-export { MindalkaAccordion, MindalkaContextMenu, MindalkaPanel, MindalkaRadio, MindalkaSelect, MindalkaSlideshow, MindalkaSwitch, MindalkaTab, MindalkaTabGroup, MindalkaToggleButton, createElement, createElementNS, display, hide, show, styleInject, toggle, visible };
+export { MindalkaAccordion, MindalkaContextMenu, MindalkaPanel, MindalkaRadio, MindalkaSelect, MindalkaSlideshow, MindalkaSwitch, MindalkaTab, MindalkaTabGroup, MindalkaToggleButton, createElement, createElementNS, display, hide, show, styleInject, toggle, updateElement, visible };

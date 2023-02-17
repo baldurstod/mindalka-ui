@@ -10,6 +10,11 @@ export function createElementNS(namespaceURI, tagName, options) {
 	return element;
 }
 
+export function updateElement(element, options) {
+	createElementOptions(element, options);
+	return element;
+}
+
 function createElementOptions(element, options) {
 	if (options) {
 		for (let optionName in options) {
